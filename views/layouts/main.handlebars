@@ -1,0 +1,82 @@
+<!-- main.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Ravi+Prakash|Calligraffitti|Droid+Sans|Macondo" rel="stylesheet" type="text/css">
+    <title>Eat Da Burger</title>
+</head>
+
+<body>
+    {{{ body }}}
+</body>
+<style type="text/css">
+body {
+    font-family: 'Macondo', cursive;
+}
+
+.jumbotron {
+    color: #000000;
+    background: linear-gradient(#800080, #E6E6FA);
+    padding-top: 15px;
+}
+
+#mySlide {
+    display: block;
+    max-height: 200px;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 25px;
+}
+
+#myDiv {
+    display: block;
+    height: 200px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+td {
+    width: 500px;
+}
+
+h1,
+h2 {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+}
+
+button {
+    border-radius: 25px;
+    margin: 2px;
+    padding: 2px;
+}
+
+input {
+    border-radius: 25px;
+    margin: 2px;
+    padding: 2px;
+    width: 300px;
+}
+
+.myTitle {
+    text-align: center;
+}
+</style>
+<script>
+var currentPic = 0;
+var prime = document.getElementById("mySlide");
+
+var picSources = ["", "https://media4.giphy.com/media/LvxxSWWpIO7Cw/200_s.gif", "http://img.aws.livestrongcdn.com/ls-article-image-673/cpi.studiod.com/www_livestrong_com/photos.demandstudios.com/getty/article/83/80/485196970_XS.jpg", "http://images6.fanpop.com/image/photos/33300000/Hamburger-hamburgers-33393436-1366-768.jpg", "https://blog.williams-sonoma.com/wp-content/uploads/2013/08/WS_GrillMaster_Howto_Cheeseburger_143.jpg", "http://cdn3.recipecorner.com/sites/recipecorner.com/files/imagecache/recipe_full_node/juciest_hamburger.jpg"];
+
+setInterval(function() {
+    currentPic = (currentPic != picSources.length - 1) ? currentPic + 1 : 1;
+    prime.setAttribute('src', picSources[currentPic]);
+}, 3000);
+</script>
+
+</html>

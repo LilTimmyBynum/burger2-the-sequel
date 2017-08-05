@@ -1,0 +1,51 @@
+<div class="container myContainer">
+    <div class="jumbotron">
+        <h1>Eat Da Burger</h1>
+        <div id="myDiv"><img id="mySlide" alt="...wait for the burger pics !!!!"></div>
+        <h2 class="afterPics">Get ready to eat lots of burgers !!</h2>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-6">
+                <div class="myTitle">Enter a burger you would like to eat and hit SUBMIT button.</div>
+                <form action="/" method="POST" class="myTitle">
+                    <input type="text" name="yourBurger">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="col-xs-3"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7">
+                {{#each burgertoos}} {{#unless this.devoured}}
+                <table>
+                    <tr>
+                        <td>
+                            <form action="/{{this.burger_name}}?_method=PUT" method="POST">{{this.burger_name}}</td>
+                        <td>
+                            <button type="submit">Devour</button>
+                        </td>
+                        <tr>
+                            </form>
+                </table>
+                {{/unless}} {{/each}}
+            </div>
+            <div class="col-xs-5">
+                <div class="myTitle">Devoured Burgers</div>
+                <ol>
+                    {{#each burgertoos}} {{#if this.devoured}}
+                    <li>
+                        {{this.burger_name}}
+                    </li>
+                    {{/if}} {{/each}}
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
